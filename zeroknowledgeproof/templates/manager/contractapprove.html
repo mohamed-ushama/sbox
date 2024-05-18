@@ -1,0 +1,102 @@
+{% extends 'manager/home.html' %}
+{% block content %}
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+  	<title>View Post</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" href="{% static 'sproviders/viewpost/css/style.css' %}">
+
+	</head>
+	<body style="background-image: url({% static "background/m1.jpeg" %}); background-size: cover ; background-repeat: no-repeat">
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section"></h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<h4 class="text-center mb-4" style="color:white" >CONTRACT APPROVAL-SERVICE PROVIDER/OUTSOURCING PORTAL</h4>
+					<div class="table-wrap">
+						<table class="table">
+					    <thead class="thead-primary">
+					      <tr>
+                            <th>Outsourcing Company Email ID</th>
+                            <th>Outsourcing company service needed</th>
+                             <th>Duration</th>
+					        <th>service provider Company Name</th>
+					        <th>service provider  UPI ID</th>
+                            <th>Email ID</th>
+					        <th>SLA</th>
+					        <th>DataSecurity</th>
+					        <th>IPownership </th>
+					        <th>DisputeResolution</th>
+                            <th>TerminationClauses</th>
+
+					        <th>DesiredOutcomes</th>
+                            <th>ClauseRational</th>
+                            <th>contractlength</th>
+					        <th>Negotiation Points </th>
+					        <th>Negotiation Time</th>
+							 <th colspan="2">Contract Agreement</th>
+
+					      </tr>
+					    </thead>
+					    <tbody>
+					      <tr>
+							{% for each in data1 %}
+                              <td scope="row" class="scope" >{{each.companyemailid}}</td>
+                              <td>{{each.serviceneeded}}</td>
+							  <td>{{each.duration}}</td>
+					          <th scope="row" class="scope" >{{each.companyname}}</th>
+					        <td>{{each.contactperson}}</td>
+                            <td>{{each.emailid}}</td>
+					        <td>{{each.SLA}}</td>
+					        <td>{{each.DataSecurity}}</td>
+					        <td>{{each.IPownership}}</td>
+							 <td>{{each.DisputeResolution}}</td>
+                            <td>{{each.TerminationClauses}}</td>
+                            <td>{{each.DesiredOutcomes}}</td>
+					        <td>{{each.ClauseRational}}</td>
+					        <td>{{each.contractlength}}</td>
+					        <td>{{each.NegotiationPoints}}</td>
+                            <td>{{each.Ntime}}</td>
+                              {% if each.contractapprov is False %}
+							      <td><a class="btn btn-primary" href="/contractapprove/{{each.id}}/">Approve</a></td>
+                              {% else %}
+							      <td style="color:white"><a class="btn btn-primary">Approved</a></td>
+                              {% endif %}
+                              {% if each.contractreject is False %}
+							      <td><a class="btn btn-primary" href="/contractreject/{{each.id}}/">Reject</a></td>
+                              {% else %}
+							      <td style="color:white"><a class="btn btn-primary">Rejected</a></td>
+                              {% endif %}
+					      </tr>
+                          {% endfor %}
+					    </tbody>
+					  </table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="{% static 'sproviders/viewpost/js/jquery.min.js' %}"></script>
+  <script src="{% static 'sproviders/viewpost/js/popper.js' %}"></script>
+  <script src="{% static 'sproviders/viewpost/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'sproviders/viewpost/js/main.js' %}"></script>
+  <br><br><br><br>
+	</body>
+
+{% endblock %}
+</html>
+

@@ -1,0 +1,191 @@
+
+<!doctype html>
+{% load static %}
+<html lang="en">
+<head>
+<title>Registration Form </title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Softball Registration Form Widget Responsive, Login form web template,Flat Pricing tables,Flat Drop downs  Sign up Web Templates, Flat Web Templates, Login signup Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascrpt"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- font files -->
+<link href="//fonts.googleapis.com/css?family=Spectral" rel="stylesheet">
+<!-- /font files -->
+<!-- css files -->
+<link href="{% static 'Oportal/register/css/style.css' %}" rel='stylesheet' type='text/css' media="all" />
+<!-- /css files -->
+<link href="{% static 'Oportal/register/css/wickedpicker.css' %}" rel="stylesheet" type='text/css' media="all" />
+<script type="text/javascript" src="{% static 'Oportal/register/js/jquery-2.1.4.min.js' %}"></script>
+</head>
+<!-- HTML !-->
+
+<style>
+.button-66 {
+  background-color: #0a6bff;
+  border-radius: 4px;
+  border: 0;
+  box-shadow: rgba(1,60,136,.5) 0 -1px 3px 0 inset,rgba(0,44,97,.1) 0 3px 6px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inherit;
+  font-family: "Space Grotesk",-apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  margin: 0;
+  min-height: 56px;
+  min-width: 120px;
+  padding: 16px 20px;
+  position: relative;
+  text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  transition: all .2s cubic-bezier(.22, .61, .36, 1);
+}
+
+.button-66:hover {
+  background-color: #065dd8;
+  transform: translateY(-2px);
+}
+
+@media (min-width: 768px) {
+  .button-66 {
+    padding: 16px 44px;
+    min-width: 150px;
+  }
+}
+</style>
+<body style="background-image: url({% static "background/bbb.jpg" %}); background-size: cover ; background-repeat: no-repeat">
+<script>
+function validatePhoneNumber(input) {
+    const phoneNumber = input.value;
+    const prohibitedStarts = /^(1|2|3|4|5|0)/;
+    const feedbackMessage = input.parentElement.querySelector('.feedback-message');
+
+    if (prohibitedStarts.test(phoneNumber)) {
+        input.setCustomValidity("Phone numbers starting with 1, 2, 3, 4, 5, or 0 are not allowed.");
+        feedbackMessage.innerText = "Phone numbers starting with 1, 2, 3, 4, 5, or 0 are not allowed.";
+    } else {
+        input.setCustomValidity("");
+        feedbackMessage.innerText = "";
+    }
+}
+</script>
+<script>
+			    function validateEmail(input) {
+        var email = input.value;
+        var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+        if (!emailPattern.test(email)) {
+            input.value = '';
+            input.focus();
+            return false;
+        }
+        return true;
+    }
+			</script>
+	<div class="w3-banner-main">
+		<div class="center-container">
+			<h1 class="header-w3ls">Outsourcees Registration Form</h1>
+			<div class="content-top">
+				<div class="content-w3ls">
+					<div class="form-w3ls">
+						<form action="/outsourcesregister/" method="post" autocomplete="off">
+							{% csrf_token %}
+							<div class="content-wthree1">
+								<div class="grid-agileits1">
+									<div class="form-control">
+										<label class="header">company Name </label>
+										<input type="text" id="name" name="companyname" placeholder="" title="Please enter your Full Name" required="">
+									</div>
+
+									<div class="form-control">
+										<label class="header">Email ID </label>
+										<input type="email" id="email" name="companyemailid"   onblur="validateEmail(this)" placeholder="" title="Please enter a Valid Email Address" required="">
+									</div>
+
+									<div class="form-control">
+										<label class="header">Contact Person Name </label>
+										<input type="text" id="name" name="contactperson" placeholder="" title="Please enter your Full Name" required="">
+									</div>
+									<div class="grid-w3layouts1">
+									<div class="form-control">
+										<label class="header">Password</label>
+										<input type="password" id="name" name="password" placeholder="" title="Please enter your Full Name" required="">
+									</div>
+
+									</div>
+								</div>
+								<div class="form-control">
+							<label class="header"></label>
+
+						</div>
+						<div class="gaps">
+							<label class="header"> </label>
+<!--							<input type="text" id="timepicker" name="Time" class="timepicker form-control" value="">-->
+						</div>
+								</div>
+							</div>
+					</div>
+					<div class="form-w3ls-1">
+						<div class="form-control">
+							<label class="header">Phone Number </label>
+							<input type="tel" id="name" name="phoneno" pattern="[6-9][0-9]{3}[0-9]{6}" maxlength="10" onblur="validatePhoneNumber(this)" oninput="validatePhoneNumber(this)" title="Please enter your Phone Number" required="">
+						</div>
+						<div class="form-control">
+							<label class="header"> Company Address </label>
+							<input type="text" id="name" name="Dname"  placeholder="" title="Please enter your Full Name" required="">
+						</div>
+						<div class="form-control">
+							<label class="header">country</label>
+							<input type="text" id="name" name="country" placeholder="" title="Please enter your Full Name" required="">
+						</div>
+						<div class="form-control">
+							<label class="header">confirm password</label>
+							<input type="password" id="name" name="cname" placeholder="" title="Please enter your Full Name" required="">
+<!--								<label class="header">industry type</label>-->
+<!--									<select class="form-control">-->
+<!--										<option></option>-->
+<!--										<option>Technology</option>-->
+<!--										<option>Finance</option>-->
+<!--										<option>Manufacturing</option>-->
+<!--										<option>Healthcare</option>-->
+<!--										<option>Retail</option>-->
+<!--									</select>-->
+						</div>
+<!--							<div class="form-control Insurance">-->
+<!--									<label class="header"></label>-->
+<!--									<textarea  name="name" placeholder="" title="" required=""></textarea>-->
+<!--							</div>-->
+									  <input type="submit" value="Register">
+									  </form>
+					</div><br><br><br>
+
+					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a  href="/outsourcelogin/" ><button class="button-66" role="button">Back</button></a>
+				</div>
+			</div>	<br><br>
+
+<!--				<p class="copyright">Thank You<a href="https://w3layouts.com/" target="_blank"></a></p>-->
+		</div>
+	</div>
+
+<!-- Calendar -->
+				<link rel="stylesheet" href="{% static 'Oportal/register/css/jquery-ui.css' %}" />
+				<script src="{% static 'Oportal/register/js/jquery-ui.js' %}"></script>
+				  <script>
+						  $(function() {
+							$( "#datepicker,#datepicker1,#datepicker2,#datepicker3" ).datepicker();
+						  });
+				  </script>
+			<!-- //Calendar -->
+			<script type="text/javascript" src="{% static 'Oportal/register/js/wickedpicker.js' %}"></script>
+			<script type="text/javascript">
+				$('.timepicker').wickedpicker({twentyFour: false});
+			</script>
+
+
+</body>
+</html>

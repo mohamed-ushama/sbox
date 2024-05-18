@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download File</title>
+    <style>
+        body {
+            background-image: url('/static/files/u.jpg');
+            background-size: cover;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .form-container {
+    background-color: rgba(255, 255, 255, 0.7); /* White with 50% opacity */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(40, 0, 0, 0.1); /* Optional: Add a shadow effect */
+}
+        .my-button {
+
+            display: inline-block;
+            padding: 5px 10px;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            border: 2px solid #007bff; /* Blue border */
+            color: #007bff; /* Blue text color */
+            background-color: #fff; /* White background */
+            border-radius: 5px; /* Rounded corners */
+            transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+        }
+
+        /* Hover effect */
+        .my-button:hover {
+            background-color: #007bff; /* Blue background on hover */
+            color: #fff; /* White text color on hover */
+        }
+        .custom-textbox {
+    border: 1px solid #2196F3; /* Blue border */
+    background-color: #f2f2f2; /* Light gray background */
+    color: #333; /* Text color */
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%; /* Adjust width as needed */
+    box-sizing: border-box; /* Ensure padding and border are included in width */
+}
+
+/* Optional: Style for focus state */
+.custom-textbox:focus {
+    outline: none; /* Remove default focus outline */
+    border-color: #007bff; /* Change border color on focus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add a shadow on focus */
+}
+h1{
+color:'white';
+}
+.register-link{
+   text-align: center;
+    font-size: 14.5px;
+    margin:20px 0 15px;
+}
+    </style>
+</head>
+<body>
+    <div class="form-container">
+    <form method="post">
+        <h1 align="center" >Download File</h1><br>
+        {% csrf_token %}
+        <div align="center ">{{ form.as_p }}<br>
+            <button class="my-button" type="submit" >Download</button><br> <br><p><a href="/view/" class="my-button"> &nbspFor View&nbsp  </a>&nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp   <a  href="/uload/" class="my-button" >For Upload</a>
+        <br><br><br>
+        </div>
+    </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+<title>Outsourcees</title>
+<!-- meta_tags-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="connective login form a Flat Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Meta_tag_Keywords -->
+<link href="{% static 'Oportal/login/css/style.css' %}" rel="stylesheet" type="text/css" media="all"><!--style_sheet-->
+<link href="{% static 'Oportal/login/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css" media="all"><!--font_awesome_icons-->
+<!--web_fonts-->
+<link href="//fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900&amp;subset=latin-ext" rel="stylesheet">
+<!--//web_fonts-->
+</head>
+<style>
+
+.button-66 {
+  background-color: #0a6bff;
+  border-radius: 4px;
+  border: 0;
+  box-shadow: rgba(1,60,136,.5) 0 -1px 3px 0 inset,rgba(0,44,97,.1) 0 3px 6px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inherit;
+  font-family: "Space Grotesk",-apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  margin: 0;
+  min-height: 56px;
+  min-width: 120px;
+  padding: 16px 20px;
+  position: relative;
+  text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  transition: all .2s cubic-bezier(.22, .61, .36, 1);
+}
+
+.button-66:hover {
+  background-color: #065dd8;
+  transform: translateY(-2px);
+}
+
+@media (min-width: 768px) {
+  .button-66 {
+    padding: 16px 44px;
+    min-width: 150px;
+  }
+}
+</style>
+<body>
+<script>
+  {% for msg in messages %}
+     alert('{{ msg }}');
+  {% endfor %}
+</script>
+<div class="form">
+<h1>Outsourcees Login Form</h1>
+	<div class="form-content">
+		<form action="/outsourcelogin/" method="post"  autocomplete="off">
+			{% csrf_token %}
+			<div class="form-info">
+				<h2 >welcome</h2>
+			</div>
+			<div class="email-w3l">
+				<span class="i1"><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
+				<input class="email" type="email" name="companyemailid" placeholder="Email" required="">
+			</div>
+			<div class="pass-w3l">
+			<!---728x90--->
+			<span class="i2"><i class="fa fa-unlock" aria-hidden="true"></i></span>
+				<input class="pass" type="password" name="password" placeholder="Password" required="">
+			</div>
+
+			<div class="submit-agileits">
+				<input class="login" type="submit" value="login">
+			</div>
+		</form>
+      <a  href="/outsourcesregister/" ><button style=margin-left:-400px;margin-top:500px;"  class="button-66" role="button">REGISTER</button></a>
+		    &nbsp&nbsp&nbsp&nbsp&nbsp<a  href="/mainpg/" ><button style=margin-left:-210px;margin-top:500px;" class="button-66" role="button">HOME</button></a>
+	</div>
+</div>
+
+<!---728x90--->
+
+<!---728x90--->
+</body>
+</html>

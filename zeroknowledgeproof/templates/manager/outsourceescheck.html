@@ -1,0 +1,80 @@
+{% extends 'manager/home.html' %}
+{% block content %}
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+  	<title>View Post</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" href="{% static 'sproviders/viewpost/css/style.css' %}">
+
+	</head>
+	<body style="background-image: url({% static "background/m6.jpeg" %}); background-size: cover ; background-repeat: no-repeat">
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section"></h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<h4 class="text-center mb-4" style="color:white"> Outsourcees Companies Approval Form</h4>
+					<div class="table-wrap">
+						<table class="table">
+					    <thead class="thead-primary">
+					      <tr>
+					        <th>Company Name</th>
+					        <th>Client Name</th>
+                            <th>Email ID</th>
+					        <th>Location</th>
+					        <th>Phone No</th>
+							 <th colspan="2"> Action</th>
+
+					      </tr>
+					    </thead>
+					    <tbody>
+					      <tr>
+							{% for each in data %}
+					        <th scope="row" class="scope" >{{each.companyname}}</th>
+					        <td>{{each.contactperson}}</td>
+							  <td>{{each.companyemailid}}</td>
+							   <td>{{each.country}}</td>
+					        <td>{{each.phoneno}}</td>
+
+                          {% if each.approve is False %}
+							  <td><a class="btn btn-primary" href="/outsourceesapprove/{{each.id}}/">Approve</a></td>
+                   {% elif each.approve is True %}
+                       <td style="color:white"><a class="btn btn-primary">Approved</a></td>
+                   {% endif %}
+                   {% if each.reject is False %}
+							  <td><a class="btn btn-primary" href="/outsourceesreject/{{each.id}}/">reject</a></td>
+                   {% elif each.reject is True %}
+                           <td><a class="btn btn-primary">Denied</a></td>
+                   {% endif %}
+
+					      </tr>
+                          {% endfor %}
+					    </tbody>
+					  </table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="{% static 'sproviders/viewpost/js/jquery.min.js' %}"></script>
+  <script src="{% static 'sproviders/viewpost/js/popper.js' %}"></script>
+  <script src="{% static 'sproviders/viewpost/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'sproviders/viewpost/js/main.js' %}"></script>
+
+	</body>
+{% endblock %}
+</html>
+

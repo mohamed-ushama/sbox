@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Repository</title>
+    <h1>Data Repository</h1>
+
+    <style>
+        body {
+            background-image: url('/static/files/u.jpg');
+            background-size: cover;
+        }
+        h1 {
+            background:#ffffff;
+            text-align: center;
+            color: #000000;
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        table {
+            text-align: center;
+            margin: 75px auto;
+            width: 700px;
+            padding: 25px;
+            background: ;
+            border: 0px solid #e5e5e5;
+        }
+        th {
+            color: #f0f0f0;
+            padding: 8px;
+            text-align: center;
+            }
+            td {
+            color: #000000;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #620dea;
+        }
+        tr:nth-child(even) {
+            background-color: #e0e0e0;
+        }
+        tr:nth-child(odd) {
+            background-color: #e0e0e0;
+        }
+        .my-button {
+
+            display: inline-block;
+            padding: 5px 10px;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            border: 2px solid #000000; /* Blue border */
+            color: #000000; /* Blue text color */
+            background-color: #fff; /* White background */
+            border-radius: 5px; /* Rounded corners */
+            transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+        }
+
+        /* Hover effect */
+        .my-button:hover {
+            background-color: #007bff; /* Blue background on hover */
+            color: #fff; /* White text color on hover */
+        }
+
+    </style>
+</head>
+<body>
+
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Sender</th>
+            <th>Receiver</th>
+            <th>Time</th>
+        </tr>
+        {% for file in files %}
+        <tr>
+            <td>{{ file.id }}</td>
+            <td>{{ file.sender_name }}</td>
+            <td>{{ file.receiver_name }}</td>
+            <!--td>{{ file.file_upload }}</td>-->
+            <td>{{ file.timestamp }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+        <div align="center">
+        <p><a href="/uload/" class="my-button"> &nbspFor Upload &nbsp  </a>&nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp   <a  href="/dload/" class="my-button" >For Download</a>
+        </div>
+</body>
+</html>

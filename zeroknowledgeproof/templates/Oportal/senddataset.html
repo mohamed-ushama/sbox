@@ -1,0 +1,76 @@
+{% extends 'Oportal/ophome.html' %}
+{% block content %}
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+  	<title>View Post</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" href="{% static 'sproviders/viewpost/css/style.css' %}">
+
+	</head>
+	<body style="background-image: url({% static "background/o4.jpg" %}); background-size: cover ; background-repeat: no-repeat">
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section"></h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<h4 class="text-center mb-4" style="color:white">SENDING DATA TO SERVICE PROVIDERS</h4>
+					<div class="table-wrap">
+						<table class="table">
+					    <thead class="thead-primary">
+					      <tr>
+					        <th>Company Name</th>
+					        <th>contact person</th>
+                            <th>Email ID</th>
+                              <th>industry</th>
+							  <th>serviceoffer</th>
+							 <th>Action</th>
+
+					      </tr>
+					    </thead>
+					    <tbody>
+					      <tr>
+
+					          <th scope="row" class="scope" >{{data2.companyname}}</th>
+					          <td>{{data2.contactperson}}</td>
+							  <td>{{data2.companyemailid}}</td>
+							  <td>{{data2.industry}}</td>
+							  <td>{{data2.serviceoffer}}</td>
+
+							  {% if data2.zkpidentifier is Null %}
+							    <td><a class="btn btn-primary" href="/senddata/{{data2.spid}}/">Send data</a></td>
+							  {% else %}
+							     <td><a class="btn btn-primary" style="color:white">Sent</a></td>
+							  {% endif %}
+
+					      </tr>
+
+					    </tbody>
+					  </table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="{% static 'sproviders/viewpost/js/jquery.min.js' %}"></script>
+  <script src="{% static 'sproviders/viewpost/js/popper.js' %}"></script>
+  <script src="{% static 'sproviders/viewpost/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'sproviders/viewpost/js/main.js' %}"></script>
+
+	</body>
+  <br><br><br><br><br><br><br>
+{% endblock %}
+</html>
+

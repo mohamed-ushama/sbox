@@ -1,0 +1,135 @@
+{% extends 'Oportal/ophome.html' %}
+{% block content %}
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+<title>requirement</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Auditions Registration Form Widget Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<!-- //custom-theme -->
+<link href="{% static 'Oportal/opreq/css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="{% static 'Oportal/opreq/js/jquery-2.1.4.min.js' %}"></script>
+<!-- //js -->
+<!-- font-awesome-icons -->
+<!-- //font-awesome-icons -->
+<link href="//fonts.googleapis.com/css?family=Anton&amp;subset=latin-ext,vietnamese" rel="stylesheet">
+</head>
+<body style="background-image: url({% static "background/m7.jpeg" %}); background-size: cover ; background-repeat: no-repeat">
+<!-- banner -->
+	<div class="center-container">
+	<div class="banner-dott">
+		<div class="main">
+			<h1 class="w3layouts_head">Requirement Form</h1>
+				<div class="w3layouts_main_grid">
+					<form action="/opreq/" method="post" class="w3_form_post" autocomplete="off">
+						{% csrf_token %}
+						<div class="w3_agileits_main_grid w3l_main_grid">
+							<span class="agileits_grid">
+								<label>company name</label>
+								<input type="text" name="companyname" value="{{ companyname }}" readonly="readonly" placeholder="" required="">
+							</span>
+						</div>
+						<div class="w3_agileits_main_grid w3l_main_grid">
+							<span class="agileits_grid">
+								<label>contact person</label>
+								<input type="text" name="contactperson"  value="{{ contactperson }}" readonly="readonly" placeholder="" required="">
+							</span>
+						</div>
+						<div class="w3_agileits_main_grid w3l_main_grid">
+							<span class="agileits_grid">
+								<label>Location</label>
+								<input type="text" name="location" placeholder="" required="">
+							</span>
+						</div>
+						<div class="w3_agileits_main_grid w3l_main_grid">
+							<span class="agileits_grid">
+								<label>Industry </label>
+								<select name="industry">
+									<option value="none" selected="" disabled="">Select</option>
+									<option value="Technology">Technology</option>
+									<option value="Finance">Finance</option>
+									<option value="Manufacturing">Manufacturing</option>
+									<option value="Healthcare">Healthcare</option>
+									<option value="Retail">Retail</option>
+									<option value="Legal Services">Legal Services</option>
+									<option value="Media & Entertainment">Media & Entertainment</option>
+									<option value="Education">Education</option>
+								</select>
+							</span>
+						</div>
+						<div class="w3_agileits_main_grid w3l_main_grid">
+							<span class="agileits_grid">
+								<label>Services Needed</label>
+								<input type="text" name="serviceneed" placeholder="" required="">
+							</span>
+						</div>
+						<div class="w3_agileits_main_grid w3l_main_grid">
+							<span class="agileits_grid">
+								<label>Duration</label>
+								<select name="duration">
+									<option value="none" selected="" disabled="">Select</option>
+									<option value="3 Month">3 Month</option>
+									<option value="6 Month">6 Month</option>
+									<option value="9 Month">9 Month</option>
+									<option value="12 Month">12 Month</option>
+									<option value="More than a year">More than a year </option>
+								</select>
+								</span>
+						</div>
+						<div class="w3_agileits_main_grid w3l_main_grid">
+							<span class="agileits_grid">
+								<label>Budget</label>
+								<select name="budget">
+									<option value="none" selected="" disabled="">Select</option>
+									<option value="1-3 Laks">1-3 Laks</option>
+									<option value="4-6 Laks">4-6 Laks</option>
+									<option value="7-10 Laks">7-10 Laks</option>
+									<option value="other">other</option>
+								</select>
+								</span>
+						</div>
+
+						<div class="agileits_w3layouts_main_grid w3ls_main_grid">
+							<span class="agileinfo_grid">
+
+
+									<div class="clear"> </div>
+							</span>
+						</div>
+					
+					<div class="w3_main_grid">
+						<div class="w3_main_grid_right">
+							<input type="submit" value="Submit">
+						</div>
+					</div>
+				</form>
+			</div>
+		<!-- Calendar -->
+			<link rel="stylesheet" href="{% static 'Oportal/opreq/css/jquery-ui.css' %}" />
+				<script src="{% static 'Oportal/opreq/js/jquery-ui.js' %}"></script>
+					<script>
+						$(function() {
+							$( "#datepicker" ).datepicker();
+						});
+					</script>
+		<!-- //Calendar -->
+			<div class="w3layouts_copy_right">
+				<div class="container">
+					<p></a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+<!-- //footer -->
+</body>
+{% endblock %}
+</html>
